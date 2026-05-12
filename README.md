@@ -8,7 +8,7 @@ The goal of this project is to build a functional, visual application that moves
 * Practicing **Object-Oriented Programming (OOP)** principles in a GUI environment.
 
 ## Developmental Roadmap
-* [ ] Setup project with `Maven`
+* [X] Setup project with `Maven`
 * [ ] Core weather logic (Console-based testing)
 * [ ] `REST API` integration (`OpenWeatherMap`)
 * [ ] `JSON` parsing and data modeling
