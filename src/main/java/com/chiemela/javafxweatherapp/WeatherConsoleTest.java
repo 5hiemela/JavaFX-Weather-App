@@ -6,6 +6,7 @@ public class WeatherConsoleTest {
 
         WeatherService service = new WeatherService();
 
-        System.out.println(service.getWeather("Chicago"));
+        String json = service.getWeather("Chicago"); // Chicago is placeholder
+        service.parseWeather(json);
     }
 }
