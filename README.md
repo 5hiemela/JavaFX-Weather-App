@@ -9,9 +9,9 @@ The goal of this project is to build a functional, visual application that moves
 
 ## Developmental Roadmap
 * [X] Setup project with `Maven`
-* [ ] Core weather logic (Console-based testing)
-* [ ] `REST API` integration (`OpenWeatherMap`)
-* [ ] `JSON` parsing and data modeling
+* [X] Core weather logic (Console-based testing)
+* [X] `REST API` integration (`OpenWeatherMap`)
+* [X] `JSON` parsing and data modeling
 * [ ] `JavaFX` UI implementation (2D/3D visuals)
 * [ ] Error handling (invalid cities, network issues)
 * [ ] Search by city functionality
