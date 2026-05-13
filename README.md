@@ -14,7 +14,7 @@ The goal of this project is to build a functional, visual application that moves
 * [X] `JSON` parsing and data modeling
 * [ ] `JavaFX` UI implementation (2D/3D visuals)
 * [ ] Error handling (invalid cities, network issues)
-* [ ] Search by city functionality
+* [X] Search by city functionality
 * [ ] Forecast support (5-day data)
 
 ## Technologies
