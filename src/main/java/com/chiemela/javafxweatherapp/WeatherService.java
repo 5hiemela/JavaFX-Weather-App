@@ -20,6 +20,13 @@ public class WeatherService {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
+            int status = connection.getResponseCode();
+
+            if (status != 200) {
+                System.out.println("Error: HTTP " + status);
+                return null;
+            }
+
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(connection.getInputStream())
             );
