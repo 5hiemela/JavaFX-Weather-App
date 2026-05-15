@@ -5,9 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class WeatherController {
-    @FXML
-    private TextField cityInput;
+    @FXML private TextField cityInput;
 
+    @FXML private Label errorLabel;
     @FXML private Label cityLabel;
     @FXML private Label countryLabel;
     @FXML private Label conditionLabel;
@@ -20,11 +20,16 @@ public class WeatherController {
     @FXML
     private void getWeather() {
         String city = cityInput.getText();
+        if (city.isBlank()) {
+            errorLabel.setText("Please enter a city");
+            return;
+        }
 
+        errorLabel.setText("");
         WeatherService service = new WeatherService();
         String json = service.getWeather(city);
         if (json == null) {
-            System.out.println("Failed to retrieve weather");
+            errorLabel.setText("Failed to retrieve weather");
             return;
         }
         WeatherData weather = service.parseWeather(json);
