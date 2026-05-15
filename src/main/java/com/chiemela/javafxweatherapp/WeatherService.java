@@ -13,7 +13,7 @@ public class WeatherService {
     public String getWeather(String city) {
         try {
             String urlString = "https://api.openweathermap.org/data/2.5/weather?q="
-                    + city + "&appid=YOUR_API_KEY&units=imperial";
+                    + city + "&appid=5551f7592d08719d859a9c6a573579a6&units=imperial";
 
             URL url = new URL(urlString);
 
@@ -54,12 +54,21 @@ public class WeatherService {
             JsonNode root = mapper.readTree(response);
 
             String city = root.get("name").asText();
+            String condition = root.get("weather").get(0).get("main").asText();
+            String description = root.get("weather").get(0).get("description").asText();
             double temp = root.get("main").get("temp").asDouble();
-            String condition = root.get("weather").get(0).get("description").asText();
+            double tempFeel = root.get("main").get("feels_like").asDouble();
+            double windSpeed = root.get("wind").get("speed").asDouble();
+            int humidity = root.get("main").get("humidity").asInt();
 
             System.out.println("City: " + city);
-            System.out.println("Temp: " + temp);
             System.out.println("Condition: " + condition);
+            System.out.println("Description: " + description);
+            System.out.println("Temperature: " + temp);
+            System.out.println("Feels Like: " + tempFeel);
+            System.out.println("Humidity: " + humidity + "%");
+            System.out.println("Wind Speed: " + windSpeed + " mph");
+
         } catch (Exception e) {
             e.printStackTrace(); // change later
         }
