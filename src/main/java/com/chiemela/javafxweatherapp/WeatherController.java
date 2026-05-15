@@ -11,6 +11,9 @@ public class WeatherController {
     @FXML
     private void getWeather() {
         String city = cityInput.getText();
-        System.out.println("Button clicked: " + city);
+
+        WeatherService service = new WeatherService();
+        String json = service.getWeather(city);
+        WeatherData weather = service.parseWeather(json);
     }
 }
