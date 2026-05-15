@@ -48,7 +48,7 @@ public class WeatherService {
         }
     }
     // Parses through raw JSON weather data
-    public void parseWeather(String response) {
+    public WeatherData parseWeather(String response) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(response);
@@ -62,16 +62,12 @@ public class WeatherService {
             int humidity = root.get("main").get("humidity").asInt();
             double windSpeed = root.get("wind").get("speed").asDouble();
 
-            System.out.println("Place: " + city + ", " + country);
-            System.out.println("Condition: " + condition);
-            System.out.println("Description: " + description);
-            System.out.println("Temperature: " + temperature);
-            System.out.println("Feels Like: " + feelsLike);
-            System.out.println("Humidity: " + humidity + "%");
-            System.out.println("Wind Speed: " + windSpeed + " mph");
+            return new WeatherData(city, country, condition, description,
+                    temperature, feelsLike, humidity, windSpeed);
 
         } catch (Exception e) {
             e.printStackTrace(); // change later
         }
+        return null;
     }
 }

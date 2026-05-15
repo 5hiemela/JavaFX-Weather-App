@@ -14,10 +14,21 @@ public class WeatherConsoleTest {
         System.out.print("Enter city: ");
         String city = scanner.nextLine();
 
+        scanner.close();
+
         String json = service.getWeather(city);
 
         if (json != null) {
-            service.parseWeather(json);
+            WeatherData weather = service.parseWeather(json);
+
+            System.out.println("Place: " + weather.getCity() + ", " + weather.getCountry());
+            System.out.println("Condition: " + weather.getCondition());
+            System.out.println("Description: " + weather.getDescription());
+            System.out.println("Temperature: " + weather.getTemperature());
+            System.out.println("Feels Like: " + weather.getFeelsLike());
+            System.out.println("Humidity: " + weather.getHumidity() + "%");
+            System.out.println("Wind Speed: " + weather.getWindSpeed() + " mph");
+
         } else {
             System.out.println("Failed to get weather data.");
         }
