@@ -15,7 +15,7 @@ The goal of this project is to build a functional, visual application that moves
 * [ ] `JavaFX` UI implementation (2D/3D visuals)
 * [ ] Error handling (invalid cities, network issues)
 * [X] Search by city functionality
-* [ ] Additional Weather Details
+* [X] Additional Weather Details
 
 ## Technologies
 * **Language:** `Java`
