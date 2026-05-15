@@ -13,7 +13,7 @@ The goal of this project is to build a functional, visual application that moves
 * [X] `REST API` integration (`OpenWeatherMap`)
 * [X] `JSON` parsing and data modeling
 * [ ] `JavaFX` UI implementation (2D/3D visuals)
-* [ ] Error handling (invalid cities, network issues)
+* [X] Error handling (invalid cities)
 * [X] Search by city functionality
 * [X] Additional Weather Details
 
