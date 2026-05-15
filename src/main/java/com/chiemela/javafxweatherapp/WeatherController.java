@@ -8,8 +8,7 @@ public class WeatherController {
     @FXML private TextField cityInput;
 
     @FXML private Label errorLabel;
-    @FXML private Label cityLabel;
-    @FXML private Label countryLabel;
+    @FXML private Label placeLabel;
     @FXML private Label conditionLabel;
     @FXML private Label descriptionLabel;
     @FXML private Label temperatureLabel;
@@ -26,6 +25,7 @@ public class WeatherController {
         }
 
         errorLabel.setText("");
+
         WeatherService service = new WeatherService();
         String json = service.getWeather(city);
         if (json == null) {
@@ -34,13 +34,12 @@ public class WeatherController {
         }
         WeatherData weather = service.parseWeather(json);
 
-        cityLabel.setText("City: " + weather.getCity());
-        countryLabel.setText("Country: " + weather.getCountry());
+        placeLabel.setText("Place: " + weather.getCity() + ", " + weather.getCountry());
         conditionLabel.setText("Condition: " + weather.getCondition());
         descriptionLabel.setText("Description: " + weather.getDescription());
-        temperatureLabel.setText("Temperature: " + weather.getTemperature());
-        feelsLikeLabel.setText("Feels Like: " + weather.getFeelsLike());
+        temperatureLabel.setText("Temperature: " + (int) Math.round(weather.getTemperature()) + "°F");
+        feelsLikeLabel.setText("Feels Like: " + (int) Math.round(weather.getFeelsLike()) + "°F");
         humidityLabel.setText("Humidity: " + weather.getHumidity() + "%");
-        windLabel.setText("Wind Speed: " + weather.getWindSpeed() + " mph");
+        windLabel.setText("Wind Speed: " + (int) Math.round(weather.getWindSpeed()) + " mph");
     }
 }
