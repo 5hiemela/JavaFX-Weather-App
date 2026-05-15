@@ -12,10 +12,11 @@ The goal of this project is to build a functional, visual application that moves
 * [X] Core weather logic (Console-based testing)
 * [X] `REST API` integration (`OpenWeatherMap`)
 * [X] `JSON` parsing and data modeling
-* [ ] `JavaFX` UI implementation (2D/3D visuals)
+* [X] `JavaFX` UI implementation (2D/3D visuals)
 * [X] Error handling (invalid cities)
 * [X] Search by city functionality
 * [X] Additional Weather Details
+* [ ] UI Polish
 
 ## Technologies
 * **Language:** `Java`
