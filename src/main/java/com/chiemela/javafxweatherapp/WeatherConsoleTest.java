@@ -2,6 +2,7 @@ package com.chiemela.javafxweatherapp;
 
 import java.util.Scanner;
 
+// Testing console before JavaFX
 public class WeatherConsoleTest {
     public static void main(String[] args) {
         System.out.println("Console Weather Test");

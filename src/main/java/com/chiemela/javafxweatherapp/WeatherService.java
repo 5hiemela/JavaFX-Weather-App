@@ -54,14 +54,15 @@ public class WeatherService {
             JsonNode root = mapper.readTree(response);
 
             String city = root.get("name").asText();
+            String country = root.get("sys").get("country").asText();
             String condition = root.get("weather").get(0).get("main").asText();
             String description = root.get("weather").get(0).get("description").asText();
             double temp = root.get("main").get("temp").asDouble();
             double tempFeel = root.get("main").get("feels_like").asDouble();
-            double windSpeed = root.get("wind").get("speed").asDouble();
             int humidity = root.get("main").get("humidity").asInt();
+            double windSpeed = root.get("wind").get("speed").asDouble();
 
-            System.out.println("City: " + city);
+            System.out.println("Place: " + city + ", " + country);
             System.out.println("Condition: " + condition);
             System.out.println("Description: " + description);
             System.out.println("Temperature: " + temp);
