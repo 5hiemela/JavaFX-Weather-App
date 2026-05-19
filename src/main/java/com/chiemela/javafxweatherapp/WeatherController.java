@@ -34,12 +34,12 @@ public class WeatherController {
         }
         WeatherData weather = service.parseWeather(json);
 
-        placeLabel.setText("Place: " + weather.getCity() + ", " + weather.getCountry());
-        conditionLabel.setText("Condition: " + weather.getCondition());
-        descriptionLabel.setText("Description: " + weather.getDescription());
-        temperatureLabel.setText("Temperature: " + (int) Math.round(weather.getTemperature()) + "°F");
-        feelsLikeLabel.setText("Feels Like: " + (int) Math.round(weather.getFeelsLike()) + "°F");
-        humidityLabel.setText("Humidity: " + weather.getHumidity() + "%");
-        windLabel.setText("Wind Speed: " + (int) Math.round(weather.getWindSpeed()) + " mph");
+        placeLabel.setText(weather.getCity() + ", " + weather.getCountry());
+        conditionLabel.setText(weather.getCondition());
+        descriptionLabel.setText(weather.getDescription());
+        temperatureLabel.setText((int) Math.round(weather.getTemperature()) + "°F");
+        feelsLikeLabel.setText((int) Math.round(weather.getFeelsLike()) + "°F");
+        humidityLabel.setText(weather.getHumidity() + "%");
+        windLabel.setText((int) Math.round(weather.getWindSpeed()) + " mph");
     }
 }
