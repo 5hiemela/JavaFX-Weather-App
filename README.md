@@ -1,6 +1,8 @@
 # JavaFX Weather App
 A clean and modern desktop weather application built in Java using JavaFX and the OpenWeatherMap API. This project focuses on real-time API integration and building a modern GUI-based application with a sleek dark-mode dashboard that displays live weather information.
 
+![Preview](WeatherAppDemo.gif)
+
 ## Features
 * Search weather by city name
 * Real-time weather data using OpenWeatherMap API
