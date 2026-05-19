@@ -1,25 +1,23 @@
-# JavaFX Weather App (Work in Progress)
-A desktop-based weather application built in Java using a weather API.
+# JavaFX Weather App
+A clean and modern desktop weather application built in Java using JavaFX and the OpenWeatherMap API. This project focuses on real-time API integration and building a modern GUI-based application with a sleek dark-mode dashboard that displays live weather information.
 
-## Project Goal
-The goal of this project is to build a functional, visual application that moves away from console-based logic. This project focuses on:
-* Implementing a `JavaFX` GUI with 2D/3D visual elements.
-* Integrating `External APIs` to fetch and parse real-time weather data.
-* Practicing **Object-Oriented Programming (OOP)** principles in a GUI environment.
+## Features
+* Search weather by city name
+* Real-time weather data using OpenWeatherMap API
+* Displays key weather information
+* Error handling for invalid input and failed API requests
+* Clean minimalist dark-mode user interface designed entirely via a custom JavaFX CSS stylesheet
 
-## Developmental Roadmap
-* [X] Setup project with `Maven`
-* [X] Core weather logic (Console-based testing)
-* [X] `REST API` integration (`OpenWeatherMap`)
-* [X] `JSON` parsing and data modeling
-* [X] `JavaFX` UI implementation (2D/3D visuals)
-* [X] Error handling (invalid cities)
-* [X] Search by city functionality
-* [X] Additional Weather Details
-* [ ] UI Polish
-
-## Technologies
+## Tech Stack
 * **Language:** `Java`
-* **Framework:** `JavaFX`
+* **GUI Framework:** `JavaFX` (FXML & CSS Styling)
 * **Build Tool:** `Maven`
-* **Data Format:** `JSON` / `REST API`
+* **API:** `OpenWeatherMap API (REST)`
+* **Data Format:** `JSON` Parsing
+
+## Architecture
+This project follows the Model-View-Controller (MVC) design pattern:
+* **Model (`WeatherData`):** Data model that structures and stores the parsed weather information.
+* **View (`weather-view.fxml` & `style.css`):** The visual layout and premium dark styling layer.
+* **Controller (`WeatherController`):** Manages user interactions, event handling, and bridges the View and the Service.
+* **Service (`WeatherService`):** Orchestrates the external REST API requests and handles JSON parsing.
